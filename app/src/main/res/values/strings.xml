@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab-3</string>
+    <string name="title">Title</string>
+    <string name="genre">Genre</string>
+    <string name="author">Author</string>
+    <string name="save">Save</string>
+    <string name="edit_the_book">Edit the book</string>
+    <string name="add_book">Add book</string>
+</resources>
