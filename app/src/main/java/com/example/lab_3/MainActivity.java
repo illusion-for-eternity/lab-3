@@ -54,8 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
             ArrayList<String> bookTitles = new ArrayList<>();
 
+
             for (Book book : books) {
-                bookTitles.add(book.getTitle() + " | " + book.getAuthor() + "\n" + book.getGenre());
+                String createdAt = book.getCreatedAt().substring(0, 16);
+                bookTitles.add(    book.getTitle() + "\n" +book.getAuthor()
+                        + " | " + book.getGenre()
+                        + "\n" + "Created: " + createdAt);
             }
 
             adapter = new ArrayAdapter<>(
