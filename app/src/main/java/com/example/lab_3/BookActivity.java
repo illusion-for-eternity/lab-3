@@ -66,13 +66,13 @@ public class BookActivity extends AppCompatActivity {
             String genre = genreEditText.getText().toString().trim();
             String author = authorEditText.getText().toString().trim();
 
-            if (containsInvalidSymbols(author) || containsInvalidSymbols(genre)) {
-                Toast.makeText(this, "Author and genre contain invalid symbols", Toast.LENGTH_SHORT).show();
+            if (title.isEmpty() || genre.isEmpty() || author.isEmpty()) {
+                Toast.makeText(this, "Fill in the fields", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            if (title.isEmpty() || genre.isEmpty() || author.isEmpty()) {
-                Toast.makeText(this, "Fill in the fields", Toast.LENGTH_SHORT).show();
+            if (containsInvalidSymbols(author) || containsInvalidSymbols(genre)) {
+                Toast.makeText(this, "Author and genre contain invalid symbols", Toast.LENGTH_SHORT).show();
                 return;
             }
 
