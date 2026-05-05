@@ -45,9 +45,17 @@ public class MainActivity extends AppCompatActivity {
 
         Button sortButton = findViewById(R.id.sortButton);
         sortButton.setOnClickListener(v -> {
-            rb1.setVisibility(View.VISIBLE);
-            rb2.setVisibility(View.VISIBLE);
-            rb3.setVisibility(View.VISIBLE);
+            if(rb1.getVisibility()== View.VISIBLE && rb2.getVisibility()==View.VISIBLE && rb3.getVisibility()==View.VISIBLE)
+            {
+                rb1.setVisibility(View.GONE);
+                rb2.setVisibility(View.GONE);
+                rb3.setVisibility(View.GONE);
+            }
+            else{
+                rb1.setVisibility(View.VISIBLE);
+                rb2.setVisibility(View.VISIBLE);
+                rb3.setVisibility(View.VISIBLE);
+            }
         });
 
         addBookButton.setOnClickListener(v -> {
