@@ -4,32 +4,77 @@
     android:orientation="vertical"
     android:padding="6dp">
 
-    <TextView
-        android:layout_marginTop="70dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Books"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:layout_width="225dp"
+            android:layout_height="55dp"
+            android:gravity="start"
+            android:text="@string/books"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sortButton"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="@string/sorting"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:gravity="center"
-        android:layout_marginBottom="4dp"/>
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/RadioButtonAuthor"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:text="By author" />
+
+        <RadioButton
+            android:id="@+id/RadioButtonTitle"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:text="By title" />
+
+        <RadioButton
+            android:id="@+id/RadioButtonGenre"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:text="ByGenre" />
+    </RadioGroup>
+
+
     <Button
         android:id="@+id/addBookButton"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
         android:text="@string/add_book"
         android:textColor="#FFFFFF"
-        android:background="@drawable/button_background"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"/>
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/booksListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="5dp"
-        android:divider="#63e6be"/>
+        android:divider="#63e6be"
+        android:dividerHeight="5dp" />
 
 </LinearLayout>
