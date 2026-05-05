@@ -120,4 +120,43 @@ public class BookRepository {
 
         return exists;
     }
+
+    public ArrayList<Book> sortBy(String sortOption) {
+        ArrayList<Book> books = new ArrayList<>();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor;
+
+        switch (sortOption) {
+            case "author":
+                cursor = db.rawQuery("SELECT * FROM books ORDER BY author DESC", null);
+                break;
+
+            case "title":
+                cursor = db.rawQuery("SELECT * FROM books ORDER BY title DESC", null);
+                break;
+
+            case "genre":
+                cursor = db.rawQuery("SELECT * FROM books ORDER BY genre DESC", null);
+                break;
+            default:
+                cursor = db.rawQuery("SELECT * FROM books ORDER BY id DESC", null);
+                break;
+        }
+
+        while (cursor.moveToNext()) {
+            Book book = new Book(
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("title")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("genre")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("author")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("createdAt"))
+            );
+            books.add(book);
+        }
+
+        cursor.close();
+        db.close();
+
+        return books;
+    }
 }
