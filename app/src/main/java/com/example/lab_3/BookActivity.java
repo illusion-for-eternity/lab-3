@@ -13,7 +13,6 @@ public class BookActivity extends AppCompatActivity {
     private EditText titleEditText;
     private EditText genreEditText;
     private EditText authorEditText;
-    private TextView editBookText;
     private BookRepository repository;
     private int bookId = -1;
 
@@ -27,7 +26,7 @@ public class BookActivity extends AppCompatActivity {
         titleEditText = findViewById(R.id.titleEditText);
         genreEditText = findViewById(R.id.genreEditText);
         authorEditText = findViewById(R.id.authorEditText);
-        editBookText = findViewById(R.id.editBookText);
+        TextView editBookText = findViewById(R.id.editBookText);
 
         Button saveButton = findViewById(R.id.saveButton);
         Button deleteButton = findViewById(R.id.deleteButton);
